@@ -1,3 +1,11 @@
+function sel(value2){
+    for(var i = 0; i < document.querySelector(".select").length; i++){
+        if(document.querySelector(".select").options[i].value == value2){
+            document.querySelector(".select").selectedIndex = i;
+        }
+    }
+}
+
 var line = document.getElementById("line");
 var buttons = document.getElementsByTagName("BUTTON");
 var bar = document.getElementById("bar");
@@ -201,6 +209,47 @@ else {document.getElementById("emailswitch").setAttribute("checked", "")}
 
 if(localStorage.public == "false"){}
 else {document.getElementById("profile-switch").setAttribute("checked", "")}
+if(localStorage.select == ""){}
+else if (localStorage.select == "-12:00"){sel("-12:00")}
+else if (localStorage.select == "-11:00"){sel("-11:00")}
+else if (localStorage.select == "-10:00"){sel("-10:00")}
+else if (localStorage.select == "-9:30"){sel("-09:30")}
+else if (localStorage.select == "-09:00"){sel("-09:00")}
+else if (localStorage.select == "-08:00"){sel("-08:00")}
+else if (localStorage.select == "-07:00"){sel("-07:00")}
+else if (localStorage.select == "-06:00"){sel("-06:00")}
+else if (localStorage.select == "-05:00"){sel("-05:00")}
+else if (localStorage.select == "-04:50"){sel("-04:50")}
+else if (localStorage.select == "-04:00"){sel("-04:00")}
+else if (localStorage.select == "-03:50"){sel("-03:50")}
+else if (localStorage.select == "-03:00"){sel("-03:00")}
+else if (localStorage.select == "-02:00"){sel("-02:00")}
+else if (localStorage.select == "-01:00"){sel("-01:00")}
+else if (localStorage.select == "+00:00"){sel("+00:00")}
+else if (localStorage.select == "+01:00"){sel("+01:00")}
+else if (localStorage.select == "+02:00"){sel("+02:00")}
+else if (localStorage.select == "+03:00"){sel("+03:00")}
+else if (localStorage.select == "+03:50"){sel("+03:50")}
+else if (localStorage.select == "+04:00"){sel("+04:00")}
+else if (localStorage.select == "+04:50"){sel("+04:50")}
+else if (localStorage.select == "+05:00"){sel("+05:00")}
+else if (localStorage.select == "+05:50"){sel("+05:50")}
+else if (localStorage.select == "+05:75"){sel("+05:75")}
+else if (localStorage.select == "+06:00"){sel("+06:00")}
+else if (localStorage.select == "+06:50"){sel("+06:50")}
+else if (localStorage.select == "+07:00"){sel("+07:00")}
+else if (localStorage.select == "+08:00"){sel("+08:00")}
+else if (localStorage.select == "+08:75"){sel("+08:75")}
+else if (localStorage.select == "+09:00"){sel("+09:00")}
+else if (localStorage.select == "+09:50"){sel("+09:50")}
+else if (localStorage.select == "+10:50"){sel("+10:50")}
+else if (localStorage.select == "+11:00"){sel("+11:00")}
+else if (localStorage.select == "+11:50"){sel("+11:50")}
+else if (localStorage.select == "+12:00"){sel("+12:00")}
+else if (localStorage.select == "+12:75"){sel("+12:75")}
+else if (localStorage.select == "+13:00"){sel("+13:00")}
+else if (localStorage.select == "+10:00"){sel("+10:00")}
+else if (localStorage.select == "+14:00"){sel("+14:00")}
 
 document.querySelector(".save").addEventListener("click", () => {
     if(document.getElementById("emailswitch").checked){
@@ -215,6 +264,8 @@ document.querySelector(".save").addEventListener("click", () => {
     else{
         localStorage.public = false;
     }
+    localStorage.select = document.querySelector(".select").options[document.querySelector(".select").selectedIndex].getAttribute("value");
+
 });
 document.querySelector(".cancel").addEventListener("click", () => {
     localStorage.email = false;
@@ -247,3 +298,17 @@ close.addEventListener("click", () => {
     close.parentNode.parentNode.style.display = "none";
     }
 });
+document.querySelector(".select").addEventListener("change", (e) => {
+    for (let i = 0; i < document.querySelector(".select").length; i++) {
+        const l = document.querySelector(".select")[i];
+        if(l.getAttribute("selected") == ""){l.removeAttribute("selected")}
+        else{}
+    }
+    for (let i = 1; i < document.querySelector(".select").length; i++) {
+        const l = document.querySelector(".select");
+        if(l.options[i].getAttribute("value") == l.options[l.selectedIndex].value)
+        {l.options[i].setAttribute("selected", "")}
+        else{}
+    }
+})
+// 1.41421356237309502 is closest I got to square root of 2

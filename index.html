@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Web App Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="jquery-ui.css">
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="normalize.css">
@@ -54,14 +55,14 @@
             <div class="DT-MU">
                 <div>
                     <h3>Daily traffic</h3>
-                    <div class="bar-wrap">
-                        <canvas id="bar" height="70px"></canvas>
+                    <div class="bar-wrap" height="150px">
+                        <canvas id="bar"></canvas>
                     </div>
                 </div>
                 <div>
                     <h3>Mobile Users</h3>
-                    <div class="pie-wrap">
-                        <canvas id="pie" height="70px"></canvas>
+                    <div class="pie-wrap"  height="150px">
+                        <canvas id="pie"></canvas>
                     </div>
                 </div>
             </div>
@@ -220,6 +221,23 @@
                 </div>
                 <div>
                         <h3>Settings</h3>
+                        <div class="switches">
+                            <div class="switch">
+                                <p class="info">Send Email Notifications</p>
+                                <input type="checkbox" name="switch" class="switch-checkbox" id="emailswitch" class="email">
+                                <label class="switch-label" for="emailswitch">
+                                    <span class="switch-inner"></span>
+                                    <span class="switch-ball"></span>
+                                </label>
+                            </div>
+                                <div class="switch">
+                                <p class="info">Set Profile to Public</p>
+                                <input type="checkbox" name="switch" class="switch-checkbox" id="profile-switch" class="public">
+                                <label class="switch-label" for="profile-switch">
+                                    <span class="switch-inner"></span>
+                                    <span class="switch-ball"></span>
+                                </label>
+                        </div>
                         <select class="select">
                             <option value="select-time" selected disabled>Select Timezone</option>
                             <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
@@ -267,23 +285,7 @@
                             <button class="save">Save</button>
                             <button class="cancel">Cancel</button>
                         </div>
-                        <div class="switches">
-                            <div class="switch">
-                                <p class="info">Send Email Notifications</p>
-                                <input type="checkbox" name="switch" class="switch-checkbox" id="emailswitch" class="email">
-                                <label class="switch-label" for="emailswitch">
-                                    <span class="switch-inner"></span>
-                                    <span class="switch-ball"></span>
-                                </label>
-                            </div>
-                                <div class="switch">
-                                <p class="info">Set Profile to Public</p>
-                                <input type="checkbox" name="switch" class="switch-checkbox" id="profile-switch" class="public">
-                                <label class="switch-label" for="profile-switch">
-                                    <span class="switch-inner"></span>
-                                    <span class="switch-ball"></span>
-                                </label>
-                        </div>
+
         
                 </div>
             </div>

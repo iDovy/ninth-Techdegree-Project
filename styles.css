@@ -9,6 +9,7 @@ p{
 }
 .header{
     width: 100%;
+    height: 100px;
     background-color: rgb(116, 119, 191);
 }
 .header p {
@@ -137,13 +138,13 @@ button:focus{
     max-height: 250px;
 }
 .bar-wrap{
-    height: 250px;
+    height: fit-content;
 }
 #pie{
     max-height: 300px;
 }
 .pie-wrap{
-    height: 300px;
+    height: fit-content;
 }
 .social-bc{
     background-color: rgb(93, 97, 191);
@@ -183,7 +184,7 @@ button:focus{
     border-bottom-color: rgb(139, 139, 139);
     padding-bottom: 15px;
     margin-bottom: 20px;
-    width: 45vw;
+    width: 100vw;
     display: flex;
 }
 .member img{
@@ -206,7 +207,7 @@ button:focus{
 }
 .mem-list{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     flex-wrap: wrap;
 }
@@ -219,8 +220,9 @@ button:focus{
     width: 15px;
     height: 15px;
     transform: rotate(-45deg);
-    margin: 10px 10px 0 auto;
+    margin: 10px 10px 0 30px;
     border-color: rgb(93, 97, 191);
+    min-width: 15px;
 }
 .input {
     line-height: 35px;
@@ -247,7 +249,7 @@ button:focus{
 }
 .switches{
     float: right;
-    width: 240px;
+    width: 100%;
 }
   
 .switch-checkbox, .profile-checkbox {
@@ -317,21 +319,21 @@ border-radius: 20px;
     float: right;
 }
 .select{
+    width: 100%;
     height: 50px;
 }
 .buttons{
     display: inline-flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
 }
 .buttons button{
-    width: 35vw;
+    width: 165px;
     line-height: 30px;
+    margin: 20px 5px;
 }
 .save{
     background-color: rgb(93, 97, 191);
     color: whitesmoke;
-    margin-bottom: 20px;
 }
 .popUp{
     position: absolute;
@@ -360,12 +362,39 @@ border-radius: 20px;
 .box{
     margin:25vh auto;
     width: 25vw;
+    min-width: 150px;
     height: 25vh;
+    min-height: 300px;
     background-color: aliceblue;
     border-radius: 0 20% 0 20%;
 }
 .box .boxp{
     padding: 0 10px;
+}
+@media(min-width: 768px){
+    .switches{
+        width: 100%;
+    }
+    .social-flex{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        margin: auto;
+    }
+    .social-flex div{
+        margin: 5px; 
+    }
+    .NEW-REC{
+        width: fit-content;
+        margin: auto;
+
+    }
+    .member{
+        width: 45vw;
+    }
+    .triangle{
+        margin-left: 50px;
+    }
 }
 @media(min-width: 1024px){
     .sidebar{
@@ -415,9 +444,21 @@ border-radius: 20px;
         width: 100%;
         justify-content: space-between;
     }
+    .NEW-REC div{
+        margin: 0 auto;
+        box-sizing: content-box;
+    }
     .MES-SET{
         display: flex;
         width: 100%;
         justify-content: space-between;
+    }
+    .social-flex{
+        flex-direction: row;
+        width: 100%;
+        margin: auto;
+    }
+    .social-flex div{
+        margin: 5px; 
     }
 }
